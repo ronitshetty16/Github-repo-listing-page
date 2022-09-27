@@ -38,11 +38,15 @@ const Searchbar = () => {
 
     return (
         <div className='user-top'>
-            <h1>Github Profile</h1>
-            <div className='user-search'>
-                <input className='user-input' type='text' value={searchinput} onChange={SearchChange} placeholder='Username' ></input>
-                <button className='user-button' onClick={handleChange}>Search</button>
-            </div>
+            <nav className='user-search'>
+                <h1>Github Profile</h1>
+                <div className='username'>
+                    <input className='user-input' type='text' value={searchinput} onChange={SearchChange} placeholder='Username' ></input>
+                
+                    <button className='user-button' onClick={handleChange}>Search</button>
+                </div>
+            </nav>
+            <br/>
             <div className='user-details'>
                 <UserDetailsComponent user = {user} rep = {rep}/>
             </div>

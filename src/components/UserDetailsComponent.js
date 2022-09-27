@@ -6,7 +6,9 @@ const UserDetailsComponent = ({ user, rep}) => {
     <div className='user-content'>
       <div className='user-upper'>
         <div className='user-info'>
-          <img className='user-img' src={user.avatar_url} alt={user.avatar_url} />
+          <div className='dp'>
+            <img className='user-img' src={user.avatar_url} alt={user.avatar_url} />
+          </div>
           <a href={user.html_url}>{user.html_url}</a>
         </div>
         <div className='user-profile'>
@@ -28,7 +30,7 @@ const UserDetailsComponent = ({ user, rep}) => {
           {(() => {
             const twitter = []
             if(user.twitter_username){
-              twitter.push(<p>Twitter:<a href={`https://twitter.com/${user.twitter_username}`}>https://twitter.com/{user.twitter_username}</a></p>)
+              twitter.push(<p>Twitter : <a href={`https://twitter.com/${user.twitter_username}`}>https://twitter.com/{user.twitter_username}</a></p>)
             }
             return twitter
           })()}
