@@ -1,5 +1,6 @@
 //import axios from 'axios';
 import React, {useState} from 'react'
+import '../App.css'
 import UserDetailsComponent from './UserDetailsComponent'
 
 const Searchbar = () => {
@@ -36,12 +37,13 @@ const Searchbar = () => {
     
 
     return (
-        <div>
-            <div>
-                <input className='user-search' type='text' value={searchinput} onChange={SearchChange} placeholder='Username' ></input>
-                <button onClick={handleChange}>Search</button>
+        <div className='user-top'>
+            <h1>Github Profile</h1>
+            <div className='user-search'>
+                <input className='user-input' type='text' value={searchinput} onChange={SearchChange} placeholder='Username' ></input>
+                <button className='user-button' onClick={handleChange}>Search</button>
             </div>
-            <div>
+            <div className='user-details'>
                 <UserDetailsComponent user = {user} rep = {rep}/>
             </div>
         </div>
