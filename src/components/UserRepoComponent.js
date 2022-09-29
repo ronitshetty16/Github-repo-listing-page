@@ -1,11 +1,7 @@
 import React from 'react'
 
-const UserRepoComponent = ({rep, loading}) => {
-    if(loading){
-        if (loading) {
-        return <h2>Loading...</h2>;
-    }
-    }
+const UserRepoComponent = ({rep}) => {
+    
     return (
         <div className='user-rep'>
             {rep.map(repo => (

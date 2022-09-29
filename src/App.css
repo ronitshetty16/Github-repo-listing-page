@@ -104,3 +104,16 @@ p:last-child {
 .dp{
   padding-bottom: 40px;
 }
+
+.user-rep{
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+}
+.repo{
+  padding-left: 40px;
+}
+
+.pagination {
+  margin-left: 45%;
+}

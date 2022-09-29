@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import '../App.css'
 import UserDetailsComponent from './UserDetailsComponent'
 import UserRepoComponent from './UserRepoComponent'
+import PaginationComponent from './PaginationComponent'
 
 const Searchbar = () => {
 
@@ -23,6 +24,9 @@ const Searchbar = () => {
         console.log(searchinput);
         
         const res= await fetch(`https://api.github.com/users/${searchinput}`)
+        setLoading(true);
+        
+        
         const resj = await res.json();
         console.log(user);
 
@@ -32,7 +36,7 @@ const Searchbar = () => {
         if (resj) {
             showUser(resj);
             setRepositories(repoJson);
-            setLoading(false);
+            
         }
     };
     
@@ -41,6 +45,7 @@ const Searchbar = () => {
     const indexOfFirstRep = indexOfLastRep - repPerPage;
     const currentReps = rep.slice(indexOfFirstRep, indexOfLastRep);
     
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return (
         <div className='user-top'>
@@ -55,7 +60,8 @@ const Searchbar = () => {
             <br/>
             <div className='user-details'>
                 <UserDetailsComponent user = {user}/>
-                <UserRepoComponent  rep={currentReps} loading={loading}/>
+                <UserRepoComponent  rep={currentReps} />
+                <PaginationComponent  repPerPage={repPerPage} totalrep={rep.length} paginate={paginate}/>
             </div>
         </div>
     )
