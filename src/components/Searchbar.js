@@ -2,16 +2,21 @@
 import React, {useState} from 'react'
 import '../App.css'
 import UserDetailsComponent from './UserDetailsComponent'
+import UserRepoComponent from './UserRepoComponent'
 
 const Searchbar = () => {
 
     const [searchinput,setSearch] = useState('');
     const [user,showUser] = useState({})
+    const [loading, setLoading] = useState(false);
     const [rep, setRepositories] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [repPerPage] = useState(5);
 
     const SearchChange = (e)=>{
         setSearch(e.target.value);
     }
+    
     
     const handleChange =async e=> {
         e.preventDefault();
@@ -27,13 +32,14 @@ const Searchbar = () => {
         if (resj) {
             showUser(resj);
             setRepositories(repoJson);
+            setLoading(false);
         }
-
-        
-        
-        
     };
-
+    
+    //get current rep
+    const indexOfLastRep = currentPage * repPerPage;
+    const indexOfFirstRep = indexOfLastRep - repPerPage;
+    const currentReps = rep.slice(indexOfFirstRep, indexOfLastRep);
     
 
     return (
@@ -48,7 +54,8 @@ const Searchbar = () => {
             </nav>
             <br/>
             <div className='user-details'>
-                <UserDetailsComponent user = {user} rep = {rep}/>
+                <UserDetailsComponent user = {user}/>
+                <UserRepoComponent  rep={currentReps} loading={loading}/>
             </div>
         </div>
     )

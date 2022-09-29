@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const UserDetailsComponent = ({ user, rep}) => {
+const UserDetailsComponent = ({user}) => {
   return(
     <div className='user-content'>
       <div className='user-upper'>
@@ -36,7 +36,7 @@ const UserDetailsComponent = ({ user, rep}) => {
           })()}
         </div>
       </div>
-      <div className='user-rep'>
+      {/* <div className='user-rep'>
         {rep.map(repo => (
               <div className="repo" key={repo.name}>
                 <div className="item">
@@ -48,7 +48,7 @@ const UserDetailsComponent = ({ user, rep}) => {
                 </div>
               </div>
             ))}
-      </div>
+      </div> */}
     </div>
   )
 }
