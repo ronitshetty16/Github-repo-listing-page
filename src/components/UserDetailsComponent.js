@@ -16,14 +16,14 @@ const UserDetailsComponent = ({user}) => {
           {(() => {
             const bio = [];
             if(user.bio){
-              bio.push(<p>{user.bio}</p>)
+              bio.push(<p>Bio : {user.bio}</p>)
             }
             return bio;
           })()}
           {(() => {
             const loc=[]
             if(user.location){
-              loc.push(<p className='user-loc'>{user.location}</p>)
+              loc.push(<p className='user-loc'>Location : {user.location}</p>)
             }
             return loc;
           })()}

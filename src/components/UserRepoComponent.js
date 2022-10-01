@@ -6,9 +6,9 @@ const UserRepoComponent = ({rep}) => {
         <div className='user-rep'>
             {rep.map(repo => (
                 <div className="repo" key={repo.name}>
-                    <div className="item">
+                    <div className="item" onClick={repo.html_url} target={repo.html_url}>
                         <div className="content">
-                            <a href={repo.html_url} className="header" >
+                            <a href={repo.html_url} target={repo.html_url} className="header" >
                             {repo.name}
                             </a>
                         </div>
@@ -20,3 +20,5 @@ const UserRepoComponent = ({rep}) => {
 }
 
 export default UserRepoComponent;
+
+
