@@ -147,6 +147,7 @@ a{
 .header{
   padding: 20px;
   font-size: x-large;
+  width: 600px;
 }
 
 .item:hover {
