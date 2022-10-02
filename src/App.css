@@ -148,6 +148,7 @@ a{
   padding: 20px;
   font-size: x-large;
   width: 600px;
+  text-align: center;
 }
 
 .item:hover {
