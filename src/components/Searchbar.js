@@ -12,7 +12,7 @@ const Searchbar = () => {
     const [loading, setLoading] = useState(false);
     const [rep, setRepositories] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [repPerPage] = useState(5);
+    const [repPerPage] = useState(10);
 
     const SearchChange = (e)=>{
         setSearch(e.target.value);
