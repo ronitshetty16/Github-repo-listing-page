@@ -4,4 +4,4 @@ Fetching searched user details from github api and listing user's repostories.
 
 
 
-Replit link: https://unstop.com/competitions/409946/team-details
+Replit link: https://Github-repo-listing-page.ronitshetty.repl.co
